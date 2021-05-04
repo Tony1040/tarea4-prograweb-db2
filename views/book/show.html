@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- file: views/professor/show.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{title}}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+</head>
+
+<div class="container">
+   <ul class="navbar-list">
+     <li class="navbar-item">
+       <a class="navbar-link" href="/">Home</a>
+       <a class="navbar-link" href="/book">Books</a>
+       <a class="navbar-link" href="/author">Authors</a>
+       <a class="navbar-link" href="/publisher">Publisher</a>
+   </li>
+
+   </ul>
+</div>
+
+<body>
+ <div class="container">
+  <div class="row">
+   <div class="eleven column" style="margin-top: 10%">
+    <h2>{{title}}</h2>
+    <form>
+     {{#book}}
+     <div class="row">
+      <div class="six columns">
+       <label for="nameInput">Title</label>
+       <input class="u-full-width" type="text" readonly
+          id="title" value="{{title}}">
+      </div>
+      <div class="six columns">
+       <label for="degreeInput">Edition</label>
+       <input class="u-full-width" type="text" readonly
+          id="edition" value="{{edition}}">
+      </div>
+     </div>
+
+      <div class="row">
+         <div class="four columns">
+          <label for="nameInput">Copyright</label>
+          <input class="u-full-width" type="text" readonly
+             id="copyright" value="{{copyright}}">
+         </div>
+
+         <div class="four columns">
+            <label for="nameInput">Languaje</label>
+            <input class="u-full-width" type="text" readonly
+               id="languaje" value="{{languaje}}">
+           </div>
+
+         <div class="four columns">
+          <label for="degreeInput">Pages</label>
+          <input class="u-full-width" type="text" readonly
+             id="pages" value="{{pages}}">
+         </div>
+        </div>
+      
+     <div class="row">
+      <div class="six columns">
+       <label for="emailInput">Author</label>
+
+       <a type="text" id="author" href='/author/{{author_id}}'>{{author}}<br></a>
+
+      </div>
+      
+      <div class="six columns">
+       <label for="phoneInput">Publisher</label>
+
+       <a class="u-full-width" type="text" id="publisher" href='/publisher/{{publisher_id}}'>{{publisher}}<br></a>
+
+      </div>
+      <br>
+      </div>
+
+      <br>
+     <a class="button button-primary" href="/book">Back</a>
+
+     
+     {{/book}}
+    </form>
+   </div>
+  </div>
+ </div>
+</body>

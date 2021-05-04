@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{title}}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+</head>
+
+<div class="container">
+    <ul class="navbar-list">
+      <li class="navbar-item">
+        <a class="navbar-link" href="/">Home</a>
+        <a class="navbar-link" href="/book">Books</a>
+        <a class="navbar-link" href="/author">Authors</a>
+        <a class="navbar-link" href="/publisher">Publisher</a>
+    </li>
+
+    </ul>
+</div>
+
+<body>
+ <div class="container">
+  <div class="row">
+   <div class="eleven column" style="margin-top: 10%">
+     <h2>{{title}}</h2>
+     <table><thead>
+      <tr><th>title</th><th>edition</th>
+          <th>copyright</th><th>author</th></tr>
+      </thead><tbody>
+      {{#books}}
+      <tr><td><a href="book/{{id}}">
+          {{title}} </a></td>
+      <td>{{edition}}</td>
+      <td>{{copyright}}</td>
+      <td>{{author}}</td></tr>
+      {{/books}}</tbody>
+     </table>
+     <a class="button button-primary" href="/book/create">New Book</a>
+    </div>
+   </div>
+ </div>
+</body>
